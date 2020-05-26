@@ -3,9 +3,17 @@ import {Link} from 'react-router-dom'
 
 
 function ClientSignUP(props) {
-    const {signUp, onSignUpChange, onSubmit} = props
+    const {signUp, onSignUpChange, onSubmit, disabled, errors} = props
     return (
         <form className='form container' onSubmit={onSubmit}>
+            <div>
+                <div>{errors.firstName}</div>
+                <div>{errors.lastName}</div>
+                <div>{errors.email}</div>
+                <div>{errors.password}</div>
+                <div>{errors.confirmPassword}</div>
+                <div>{errors.role}</div>
+            </div>
         <div>
             <input placeholder="First Name" name="firstName" value={signUp.firstname} onChange={onSignUpChange}/>
             <input placeholder="Last Name" name="lastName" value={signUp.lastname} onChange={onSignUpChange}/>
@@ -17,7 +25,7 @@ function ClientSignUP(props) {
                 <option value='Instructor'>Instructor</option>
                 <option value='Client'>Client</option>
             </select>
-            <button>Submit</button>
+            <button disabled={disabled}>Submit</button>
         </div>
     </form>
     )

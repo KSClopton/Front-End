@@ -16,7 +16,7 @@ function ClientSignIn(props) {
             <button>Sign In</button>
         </SignInContainer>
         <SignUp>
-            <Link to='/SignUp'>
+            <Link to='/'>
             <h3>Need to sign up?</h3> 
             </Link>
         </SignUp>

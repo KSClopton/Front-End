@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom'
 import styled from 'styled-components'
 import Blankprofile from '../Images/Blankprofile.png';
-// import workoutclassroom from '../Images/workoutclassroom.jpg'
+
 
 
 function ClientSignUP(props) {
@@ -33,15 +33,6 @@ function ClientSignUP(props) {
             </FieldContainer>
 
             <div className='role-container'>
-                {/* <Role>
-                    <button id='client' onClick={clickClient}>Client</button>
-                    <button id='instructor' onClick={clickInstructor}>Instructor</button>
-                </Role> */}
-                {/* <select value={signUp.role} onChange={onSignUpChange} name="role">
-                    <option value=''>- Select Role -</option>
-                    <option value='Instructor'>Instructor</option>
-                    <option value='Client'>Client</option>
-                </select>  */}
                 <Role>
                     <input type='radio' name='role' className='radio client' onChange={onSignUpChange} />
                     <input type='radio' name='role' className='radio instructor' onChange={onSignUpChange}/>
@@ -52,35 +43,21 @@ function ClientSignUP(props) {
             <SubmitButton>
             <button disabled={disabled}>Submit</button>
             </SubmitButton>
+            <SignIn>
+                <Link to='/SignIn'>
+                    <h3>Already have an account?</h3> 
+                </Link>
+            </SignIn>
         </MainDiv>
     </form>
     
     )
 }
-// let roleButton = document.getElementById('role-button')
-// let instructorButton = document.getElementById('instructor-button')
-// console.log(roleButton)
-// console.log(instructorButton)
-
-// roleButton.addEventListener("click" , turnGreen);
-// instructorButton.addEventListener("click" , function(){roleButton.style.background = 'grey'});
-
-// function turnGreen(event){
-//     if(event.target === roleButton){
-//         roleButton.style.backgroundColor = 'green';
-//     }
-// }
-
-// function changeColor(){
-//     let elem = document.getElementById('role');
-//     elem.style.color = 'green';
-//     console.log(elem)
-// }
 
 const MainDiv = styled.div`
     text-align: center;
     outline: none;
-   padding: 10%;
+    padding: 10%;
 
     .errors{
         color: red;
@@ -88,7 +65,6 @@ const MainDiv = styled.div`
     }
 `
 const Role = styled.div`
-    /* border: solid red 2px; */
 
     .radio{
         height: 18px;
@@ -98,7 +74,6 @@ const Role = styled.div`
     }
 
     .instructor{
-        /* border: darkgrey solid 1px; */
         border-radius: 4px;
         outline: none;
         border: solid 1px #7146b8;
@@ -109,7 +84,7 @@ const Role = styled.div`
         outline: none;
     }
     .instructor:checked{
-        background: rgb(105, 189, 46);
+        background: #7146b8;
         color: white;
         outline: none;
         border: solid 1px #7146b8;
@@ -122,7 +97,7 @@ const Role = styled.div`
         background-color:white;
     }
     .client:checked{
-        background: rgb(105, 189, 46);
+        background: #7146b8;
         color: white;
         outline: none;
         border: solid 1px #7146b8;
@@ -138,7 +113,6 @@ const NameContainer = styled.div`
     justify-content: center;
 
     input {
-        /* border: darkgrey solid 1px; */
         border: solid 1px #7146b8;
         border-radius: 4px;
         width: 4.9rem;
@@ -159,7 +133,6 @@ const BlankImage = styled.div`
 const FieldContainer = styled.div`
 
     input{
-        /* border: darkgrey solid 1px; */
         border: solid 1px #7146b8;
         border-radius: 4px;
         width: 10rem;
@@ -174,8 +147,14 @@ const SubmitButton = styled.div`
         color: white;
         padding: 1% 7% 1% 7%;
         border-radius: 20px;
-        
-
     }
+`
+const SignIn = styled.div`
+    h3{
+        font-size: .5rem;
+        color: white;
+        
+    }
+
 `
 export default ClientSignUP;
